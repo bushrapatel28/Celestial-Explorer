@@ -30,8 +30,23 @@ const MapControls = ({
   };
 
   return (
-    <div className="fixed bottom-6 right-6 flex flex-col gap-2 bg-background/80 backdrop-blur-sm p-2 rounded-lg border shadow-md">
-      <TooltipProvider>
+    <TooltipProvider>
+      <div className="fixed bottom-6 right-6 flex flex-col gap-2 bg-background/80 backdrop-blur-sm p-2 rounded-lg border shadow-md">
+        {/* Figma Design Reference */}
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <div className="flex items-center justify-center w-10 h-10 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md cursor-pointer transition-colors">
+              <img
+                src="/figma_image.png"
+                alt="Figma Design Reference"
+                className="w-6 h-6 object-contain"
+              />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>Design Reference</p>
+          </TooltipContent>
+        </Tooltip>
         <Tooltip>
           <TooltipTrigger asChild>
             <Button
@@ -112,8 +127,8 @@ const MapControls = ({
             <p>Fit to Screen</p>
           </TooltipContent>
         </Tooltip>
-      </TooltipProvider>
-    </div>
+      </div>
+    </TooltipProvider>
   );
 };
 
